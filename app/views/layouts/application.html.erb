@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Omnicalc 1</title>
+    <title>RPS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="/icon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="pico">
+    <div class="container">
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">
+                Calculators
+              </a>
+            </li>
+            <li>
+              <a href="/square">
+                Square Calculator
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      
+      <main>
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
