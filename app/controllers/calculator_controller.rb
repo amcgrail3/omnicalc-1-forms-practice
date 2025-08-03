@@ -3,11 +3,11 @@ class CalculatorController < ApplicationController
     render({ :template => "calculator_templates/homepage" })
   end
 
-  def square
-    @square = params.fetch("square").to_f
+  def square/new
+    @square = params.fetch("square/new").to_f
 
     @number_squared_result = @square * @square
 
-    render({ :template => "calculator_templates/square" })
+    render({ :template => "calculator_templates/square/new" })
   end
 end
