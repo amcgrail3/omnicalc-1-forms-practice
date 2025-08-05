@@ -1,0 +1,46 @@
+<form action="/random/results">
+    <label for="min_id">
+      Minimum
+    </label>
+    <input
+      id="min_id"
+      name="user_min"
+      placeholder="E.g. 1.5"
+    >
+    
+    <label for="max_id">
+      Maximum
+    </label>
+    
+    <input
+      id="max_id"
+      name="user_max"
+      placeholder="E.g., 4.5"
+    >
+
+    <button 
+     type="submit" 
+     style="display: block; width: 100%; padding: 1em; font-size: 1.2em;">
+     Pick random number
+   </button>
+  </form>
+
+
+
+
+
+
+##Random number form##
+    # just renders the blank form
+    def random_new
+      render({ :template => "calculator_templates/random" })
+    end
+
+    # handles the submission
+    def random_results
+      @minimum = params.fetch("user_min").to_f
+      @maximum = params.fetch("user_max").to_f
+      @random_number = rand(@minimum..@maximum)
+      render({ :template => "calculator_templates/square_root_results" })
+    end
+end

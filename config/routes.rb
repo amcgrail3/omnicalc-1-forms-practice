@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get("/square_root/results", { :controller => "calculator", :action => "square_root_results" })
   get("/payment/new", { :controller => "calculator", :action => "payment_new" })
   get("/payment/results", { :controller => "calculator", :action => "payment_results" })
+  get("/random/new", { :controller => "calculator", :action => "random_new" })
+  get("/random/results", { :controller => "calculator", :action => "random_results" })
 end

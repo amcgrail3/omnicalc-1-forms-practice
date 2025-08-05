@@ -37,7 +37,7 @@ class CalculatorController < ApplicationController
         render({ :template => "calculator_templates/payment" })
       end
 
-    # handles the submission
+      # handles the submission
       def payment_results
         # 1. Handling APR (Annual Percentage Rate):
         apr = params.fetch("user_apr_input").to_f
@@ -63,4 +63,18 @@ class CalculatorController < ApplicationController
 
         render({ :template => "calculator_templates/payment_results" })
       end
+
+  ##Random number form##
+    # just renders the blank form
+    def random_new
+      render({ :template => "calculator_templates/random" })
+    end
+
+    # handles the submission
+    def random_results
+      @minimum = params.fetch("user_min").to_f
+      @maximum = params.fetch("user_max").to_f
+      @random_number = rand(@minimum..@maximum)
+      render({ :template => "calculator_templates/random_results" })
+    end
 end
